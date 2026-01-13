@@ -1,16 +1,36 @@
 import { useState } from 'react'
+import LoginPage from './pages/login'
+import SignUpPage from './pages/singnUp'
+import HomePage from './pages/homePage'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/header'
-import ProductCard from './components/productCard'
+import AdminPage from './pages/adminPage'
+import TestPage from './pages/testPage'
+import { Toaster } from 'react-hot-toast'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-    <Header/>
-    <ProductCard name = "testing 01" description = "Good One" price = "500"/>
-    <ProductCard name = "testing 02" description = "Good Two" price = "1000"/>
-    <ProductCard name = "testing 013" description = "Good Three" price = "1500"/>
-    </>
+    <BrowserRouter>
+   
+    <div >
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 3000,
+        }}
+      />
+       {/* <Header/> */}
+      <Routes path = "/*">
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path = "/admin/*" element = {<AdminPage/>}/>
+        <Route path = "/test" element = {<TestPage/>}></Route>
+        <Route path = "/*" element = {<h1>404 Not Found</h1>}/>
+      </Routes>
+    </div>
+    </BrowserRouter>
   )
 }
 

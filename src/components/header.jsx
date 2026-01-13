@@ -1,12 +1,13 @@
 import UserData from "./userData";
+import { Link } from "react-router-dom";
 export default function Header() {
-    console.log("Header");
     return (
-        <div className = "bg-red-500 p-4 text-white text-center">
-            <h1 className ="text-2xl font-bold mb-2 ">Header</h1>
-            <p ClassName = "text-sm font-semibold bg-gray-800">Lorem ipsum dolor sit amet</p>
-            
-            <UserData/>
+        <div className = "bg-slate-400">
+            <Link to = "/">Home Page</Link>
+            <Link to = "/login">Login</Link>
+            <Link to = "/signup">Signup</Link>
+            <Link to = "/test">Test Page</Link>
+           
         </div>
     )
 }
