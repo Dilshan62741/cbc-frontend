@@ -10,7 +10,7 @@ export default function LoginPage(){
     async function handleLogin(){
         //console.log(email,password);
         try{
-            const response = await axios.post("http://localhost:3000/users/loginUser",{
+            const response = await axios.post(import.meta.env.VITE_BACKEND_URL+"/api/users/loginUser",{
             email:email,
             password:password
             })
