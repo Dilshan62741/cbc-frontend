@@ -5,7 +5,7 @@ export default function Header() {
         <div className = "bg-slate-400">
             <Link to = "/">Home Page </Link>
             <Link to = "/login">Login </Link>
-            <Link to = "/signup">Signup </Link>
+            <Link to = "/register">Register Page </Link>
             <Link to = "/test">Test Page </Link>
            
         </div>
